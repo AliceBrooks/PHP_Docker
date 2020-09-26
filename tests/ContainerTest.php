@@ -23,7 +23,7 @@ final class ContainerTest extends TestCase
 
         $this->assertNotEmpty(
             $response->getId(),
-            'Failed to create container: ' . $response->getMessage()
+            'Failed to create container: ' . json_encode($response->response)
         );
     }
 }
