@@ -14,6 +14,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: setup-docker
+      uses: docker-practice/actions-setup-docker@1.0.1
+        
     - name: Validate composer.json and composer.lock
       run: composer validate
 
