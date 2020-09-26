@@ -1,0 +1,22 @@
+{
+    "name": "alicebrooks/php-docker",
+    "description": "Allows simple usage of docker through php",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Alice Brooks",
+            "email": "alicembrooks@protonmail.com"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    },
+    "minimum-stability": "stable",
+    "require": {},
+    "require-dev": {
+        "squizlabs/php_codesniffer": "*",
+        "phpunit/phpunit": "^9.3"
+    }
+}
