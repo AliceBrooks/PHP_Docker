@@ -16,6 +16,9 @@ jobs:
 
     - name: setup-docker
       uses: docker-practice/actions-setup-docker@1.0.1
+
+    - name: pull-image
+      run: docker pull nginx
         
     - name: Validate composer.json and composer.lock
       run: composer validate

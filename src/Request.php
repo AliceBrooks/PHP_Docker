@@ -24,7 +24,6 @@ class Request
 
     public function send($path, string $data = '', $method = 'GET'): Response
     {
-        echo "Sending: $path:$data";
         curl_setopt($this->ch, CURLOPT_URL, "http://unixsocket/$path");
 
         if ($method === static::METHOD_POST) {

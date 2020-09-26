@@ -108,7 +108,6 @@ class Container
     {
         $request = new Request();
         $response = $request->send("containers/{$this->id}/start", '', Request::METHOD_POST);
-        echo 'Started ' . $this->id . PHP_EOL;
 
         return $response;
     }
@@ -117,7 +116,6 @@ class Container
     {
         $request = new Request();
         $response = $request->send("containers/{$this->id}/stop", '', Request::METHOD_POST);
-        echo 'Stopped ' . $this->id . PHP_EOL;
 
         return $response;
     }
@@ -126,7 +124,6 @@ class Container
     {
         $request = new Request();
         $response = $request->send("containers/{$this->id}", '', Request::METHOD_DELETE);
-        echo 'Deleted ' . $this->id . PHP_EOL;
 
         return $response;
     }
