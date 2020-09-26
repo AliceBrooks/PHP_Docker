@@ -6,9 +6,13 @@ namespace PHP_Docker;
 
 class Response
 {
-    public function __construct($response)
+    public $response;
+    public int $responseCode;
+
+    public function __construct($response, $responseCode)
     {
         $this->response = $response;
+        $this->responseCode = (int)$responseCode;
     }
 
     public function getId(): string
@@ -20,13 +24,18 @@ class Response
         return '';
     }
 
-    public static function create(array $response): Response
+    public function getResponseCode(): int
     {
-        return new static($response);
+        return $this->responseCode;
     }
 
-    public static function createString($response): Response
+    public function getMessage(): string
     {
-        return new static($response);
+        return $this->response['message'];
+    }
+
+    public static function create($response, $responseCode = 200): Response
+    {
+        return new static($response, $responseCode);
     }
 }

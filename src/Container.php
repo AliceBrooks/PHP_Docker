@@ -76,12 +76,9 @@ class Container
         if ($this->name) {
             $response = $request->send("containers/create?name={$this->name}", json_encode($this->options));
         } else {
-            echo 'Creating with:';
-            echo json_encode($this->options, JSON_PRETTY_PRINT);
             $response = $request->send('containers/create', json_encode($this->options));
         }
         $this->id = $response->getId();
-        echo 'Created ' . $this->id . PHP_EOL;
 
         return $response;
     }
@@ -90,6 +87,19 @@ class Container
     {
         $request = new Request();
         $response = $request->send("containers/list");
+
+        return $response;
+    }
+
+    public static function pullImage(string $image, array $options = []): Response
+    {
+        $request = new Request();
+        $defaults = [
+            'fromImage' => $image,
+        ];
+        $image = array_merge($defaults, $options);
+        $query = http_build_query($image);
+        $response = $request->send("images/create?$query", '', Request::METHOD_POST);
 
         return $response;
     }

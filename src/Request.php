@@ -24,6 +24,7 @@ class Request
 
     public function send($path, string $data = '', $method = 'GET'): Response
     {
+        echo "Sending: $path:$data";
         curl_setopt($this->ch, CURLOPT_URL, "http://unixsocket/$path");
 
         if ($method === static::METHOD_POST) {
@@ -39,13 +40,13 @@ class Request
         }
 
         $response = curl_exec($this->ch);
+        $responseCode = curl_getinfo($this->ch, CURLINFO_HTTP_CODE);
         curl_close($this->ch);
 
-        echo $path . ':' . $response . PHP_EOL;
         if ($this->isJson($response)) {
-            return Response::create(json_decode($response, true));
+            return Response::create(json_decode($response, true), $responseCode);
         } elseif ($response) {
-            return Response::createString($response);
+            return Response::create($response, $responseCode);
         }
 
         return Response::create(['No response']);
