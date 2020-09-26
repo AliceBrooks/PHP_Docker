@@ -13,6 +13,7 @@
             "src/"
         ]
     },
+    "test": "vendor/bin/phpunit",
     "minimum-stability": "stable",
     "require": {},
     "require-dev": {
