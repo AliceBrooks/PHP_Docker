@@ -14,8 +14,8 @@
         ]
     },
     "scripts": {
-        "test": "vendor/bin/phpunit",
-        "code-style": "vendor/bin/phpcs"
+        "test": "vendor/bin/phpunit ./src",
+        "code-style": "vendor/bin/phpcs ./src"
     },
     "minimum-stability": "stable",
     "require": {},
