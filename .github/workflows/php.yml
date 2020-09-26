@@ -17,8 +17,8 @@ jobs:
     - name: setup-docker
       uses: docker-practice/actions-setup-docker@1.0.1
         
-    #- name: Validate composer.json and composer.lock
-    #  run: composer validate
+    - name: Validate composer.json and composer.lock
+      run: composer validate
 
     - name: Cache Composer packages
       id: composer-cache
