@@ -30,7 +30,7 @@ class Request
             curl_setopt($this->ch, CURLOPT_POST, true);
         }
 
-        if ($method === static::METHOD_DELETE){
+        if ($method === static::METHOD_DELETE) {
             curl_setopt($this->ch, CURLOPT_CUSTOMREQUEST, static::METHOD_DELETE);
         }
 
