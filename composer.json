@@ -13,8 +13,10 @@
             "src/"
         ]
     },
-    "test": "vendor/bin/phpunit",
-    "code-style": "vendor/bin/phpcs",
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "code-style": "vendor/bin/phpcs",
+    },
     "minimum-stability": "stable",
     "require": {},
     "require-dev": {
